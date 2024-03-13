@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="task.css">
+</head>
+
+<body>
+   
+    <div class="form" id="form">
+        <h1 style="font-size: 20px; margin-top: -10px;"> Registration Form</h1>
+        <div class="inputbox">
+            Name:&nbsp; &nbsp; &nbsp; <input type="text" placeholder="Full Name" id="name" minlength="3" maxlength="30" required>
+        </div>
+
+        <div class="inputbox">
+            Email:&nbsp; &nbsp; &nbsp; <input type="text" placeholder="Your Mail" id="email" required>
+        </div>
+
+        <div class="inputbox">
+            Phone:&nbsp; &nbsp; &nbsp; <input type="number" placeholder="Phone Number" id="phone" required>
+        </div>
+
+        <div class="inputbox">
+            Maths:&nbsp; &nbsp; &nbsp; <input type="number" placeholder="Marks Obtained" id="maths" required>
+        </div>
+
+        <div class="inputbox" style="left: -3px; position: relative;">
+            English:&nbsp; &nbsp; <input type="number" placeholder="Marks Obtained" id="english" required>
+        </div>
+
+        <div class="inputbox">
+            <input type="button" id="btnsubmit" value="Enter" style="width: 100px; padding-left: 0px;">
+        </div>
+    </div>
+
+    <div id="details"></div>
+
+    <script>
+        
+        document.getElementById("btnsubmit").addEventListener("click", submitForm);
+
+        function submitForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var maths = document.getElementById("maths").value;
+            var english = document.getElementById("english").value;
+            
+            var details = "Name: " + name + "<br>";
+            details += "Email: " + email + "<br>";
+            details += "Phone: " + phone + "<br>";
+            details += "Maths: " + maths + "<br>";
+            details += "English: " + english + "<br>";
+
+            document.getElementById("details").innerHTML = details;
+        }
+    </script>
+</body>
+</html>
